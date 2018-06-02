@@ -1,0 +1,38 @@
+(function(window)
+	{
+		canvas = document.getElementById("map");
+		context = canvas.getContext("2d");
+		document.addEventListener("keydown", GetKeyboardCommands);
+		var pause = document.getElementById("pause");
+		var pauseClick = 0;
+		pause.onclick = function()
+		{
+			if(pauseClick % 2 == 0)// pause on
+			{
+				isGamePause = true;
+				pause.innerHTML = "PauseOn";
+			}
+			else // pause off
+			{
+				isGamePause = false;
+				pause.innerHTML = "PauseOff";
+			}
+			pauseClick++;
+		}
+		var restart =  document.getElementById("restart");
+		restart.onclick = function()
+		{
+			PlayerShip.lives = 3;
+			isGameSetUp = false;
+			isAlienSetUp = false;
+			isGamePause = false;
+			isPlayerAlive = true;
+			level = 1;
+			score = 0;
+			numberOfAlienMoves = 0;
+			countStepsBeforeAlienChangeDirection = 0;
+			DestroyCurrentObjects();
+		}
+		setInterval(DrawGameObjects, 80);
+	}
+)(window);

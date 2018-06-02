@@ -1,0 +1,14 @@
+In this game we have 5 objects (Shield, Alien, Bullet, PlayerShip).
+
+Shield - Every shield is make of 14 pieces in 5 rows. There are 4 angle piece and
+14 square. Every piece have 3 states of decay (0, 1, 2).
+
+Alien - There  are 4 kinds of aliens (0, 1, 2, 3). "0" kind is the spacial alien
+which move only in one direction (rigth). The rest are normal aliens and move in all
+directions (up, down, rigth, left). Every normal alien has 2 images for alien moving.
+
+Bullet - Every bullet have id (alien or player). ID alien - bullet can hit player 
+and shiedl. ID player - bullet can hit alien.
+
+PlayerShip - Start position - middle of the bottom. Move - with mouse or with 
+a - left, d - rigth, space - shoot.
