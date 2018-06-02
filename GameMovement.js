@@ -30,7 +30,7 @@ function AlienMovement()
 {
 	for(var i = 0; i < Alien.position.length; i++)
 	{
-		if(Alien.position[i].kind == 0)//spacel alien
+		if(Alien.position[i].kind == 0)//spacial alien
 		{
 			if(Alien.position.length != 0 && Alien.position[i].direction == "rigth")
 			{
