@@ -1,4 +1,4 @@
-In this game we have 5 objects (Shield, Alien, Bullet, PlayerShip).
+In this game we have 4 objects (Shield, Alien, Bullet, PlayerShip).
 
 Shield - Every shield is make of 14 pieces in 5 rows. There are 4 angle piece and
 14 square. Every piece have 3 states of decay (0, 1, 2).
