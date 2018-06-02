@@ -1,7 +1,6 @@
 var isGameSetUp = false;
 var isGamePause = false;
 var isAlienSetUp = false;
-var isAutoPlayClicked = false;
 var isPlayerAlive = true;
 var countStepsBeforeAlienChangeDirection = 0;
 var periodBetweenAlienShoots = 0;
@@ -125,11 +124,7 @@ function DrawGameObjects()
 		BulletMovement();
 		LevelGeneration();
 		AlienMoveLogic();
-		GameElementGetHit();
-		if(isAutoPlayClicked == true)
-		{
-			AutoPlay();
-		}
+		GameElementGetHit();					
 	}
 	else
 	{
