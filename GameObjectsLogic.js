@@ -60,42 +60,48 @@ function AlienMoveLogic()
 
 function GameElementGetHit()
 {
-	for(var j = 0; j < Alien.position.length; j++)
+	for(var s = 0; s < Shield.position.length; s++)
 	{
-		for(var i = 0; i < Bullet.position.length; i++)
+		for(var j = 0; j < Alien.position.length; j++)
 		{
+			for(var i = 0; i < Bullet.position.length; i++)
+			{
 //------------------------------------------------------------------player's bullet hit alien-------------------------------------------------------------------
-			if(Bullet.position[i].id == "player")
-			{
-				if(Bullet.position[i].y >= Alien.position[j].y && Bullet.position[i].y <= Alien.position[j].y + Alien.size && Bullet.position[i].x >= Alien.position[j].x && Bullet.position[i].x <= Alien.position[j].x + Alien.size)
+				if(Bullet.position[i].id == "player")
 				{
-					DrawExplosion(Alien.position[j].x, Alien.position[j].y, "alien");
-					GetPoints(Alien.position[j].kind);
-					Alien.position.splice(j, 1);
-					Bullet.position.splice(i, 1);
-				}
-			}
-//------------------------------------------------------------------alien's bullet hit shield's piece or player's ship------------------------------------------
-			if(Bullet.position[i].id == "alien")
-			{
-				if(Bullet.position[i].y >= Shield.position[j].y && Bullet.position[i].y <= Shield.position[j].y + Shield.size && Bullet.position[i].x >= Shield.position[j].x && Bullet.position[i].x <= Shield.position[j].x + Shield.size)
-				{
-					DrawExplosion(Shield.position[j].x, Shield.position[j].y, "shield");
-					if(Shield.position[j].decay == 2)
+					if(Bullet.position[i].y >= Alien.position[j].y && Bullet.position[i].y <= Alien.position[j].y + Alien.size && Bullet.position[i].x >= Alien.position[j].x && Bullet.position[i].x <= Alien.position[j].x + Alien.size)
 					{
-						Shield.position.splice(j, 1);
+						DrawExplosion(Alien.position[j].x, Alien.position[j].y, "alien");
+						GetPoints(Alien.position[j].kind);
+						Alien.position.splice(j, 1);
+						Bullet.position.splice(i, 1);
 					}
-					Bullet.position.splice(i, 1);
-					Shield.position[j].decay++;
 				}
-				if(Bullet.position[i].y >= PlayerShip.Y && Bullet.position[i].y <= PlayerShip.Y +  PlayerShip.size && Bullet.position[i].x >= PlayerShip.X && Bullet.position[i].x <= PlayerShip.X + PlayerShip.size)
+//------------------------------------------------------------------alien's bullet hit shield's piece or player's ship------------------------------------------
+				if(Bullet.position[i].id == "alien")
 				{
-					DrawExplosion(PlayerShip.X, PlayerShip.Y, "player");
-					Bullet.position.splice(i, 1);
-					PlayerShip.lives--;
-					if(PlayerShip.lives == 0)
-					{	
-						isPlayerAlive = false;
+					if(Bullet.position[i].y >= Shield.position[s].y && Bullet.position[i].y <= Shield.position[s].y + Shield.size && Bullet.position[i].x >= Shield.position[s].x && Bullet.position[i].x <= Shield.position[s].x + Shield.size)
+					{
+						DrawExplosion(Shield.position[s].x, Shield.position[s].y, "shield");
+						if(Shield.position[s].decay == 2)
+						{
+							Shield.position.splice(s, 1);
+						}
+						else
+						{
+							Shield.position[s].decay++;
+						}
+						Bullet.position.splice(i, 1);
+					}
+					if(Bullet.position[i].y >= PlayerShip.Y && Bullet.position[i].y <= PlayerShip.Y +  PlayerShip.size && Bullet.position[i].x >= PlayerShip.X && Bullet.position[i].x <= PlayerShip.X + PlayerShip.size)
+					{
+						DrawExplosion(PlayerShip.X, PlayerShip.Y, "player");
+						Bullet.position.splice(i, 1);
+						PlayerShip.lives--;
+						if(PlayerShip.lives == 0)
+						{	
+							isPlayerAlive = false;
+						}
 					}
 				}
 			}
