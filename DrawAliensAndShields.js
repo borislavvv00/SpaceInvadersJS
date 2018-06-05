@@ -91,11 +91,11 @@ function DrawAlien01()
 	var alien2 = document.getElementById("alien21");
 	var alien3 = document.getElementById("alien31");
 	var alien0 = document.getElementById("alien0");
-   for(var i = 0; i < Alien.position.length; i++)
+        for(var i = 0; i < Alien.position.length; i++)
 	{
 		if(Alien.position[i].kind == 1)
 		{	
-    		context.drawImage(alien1, Alien.position[i].x, Alien.position[i].y, Alien.size, Alien.size);
+         		context.drawImage(alien1, Alien.position[i].x, Alien.position[i].y, Alien.size, Alien.size);
 		}
 		else if(Alien.position[i].kind == 2)
 		{
