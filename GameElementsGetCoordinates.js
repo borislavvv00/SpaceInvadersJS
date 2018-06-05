@@ -66,10 +66,10 @@ function ShieldPiecesGetCoordinates()
 		for(var i = firstPiece; i < firstPiece + 14; i++)
 		{
 //----------------------------------------------------First line of shield's pieces from top to bottom---------------------------
-			if(i == firstPiece)//first piece of the line
-			{
+		if(i == firstPiece)//first piece of the line
+		{
    	 		Shield.position.push({ x : distanceBetweenShieldHorizontal, y : 450, angle : 1, decay : 0 });
-			}
+		}
    	 	else if(i >= firstPiece + 1 && i < firstPiece + 3)
    	 	{
    	 		Shield.position.push({ x : Shield.position[i - 1].x + Shield.size, y : Shield.position[i - 1].y, decay : 0 });
