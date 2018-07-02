@@ -3,6 +3,7 @@
 		canvas = document.getElementById("map");
 		context = canvas.getContext("2d");
 		document.addEventListener("keydown", GetKeyboardCommands);
+//---------------------------------------------------------------------------------------
 		var pause = document.getElementById("pause");
 		var pauseClick = 0;
 		pause.onclick = function()
@@ -19,6 +20,7 @@
 			}
 			pauseClick++;
 		}
+//--------------------------------------------------------------------------------------
 		var restart =  document.getElementById("restart");
 		restart.onclick = function()
 		{
@@ -33,6 +35,24 @@
 			countStepsBeforeAlienChangeDirection = 0;
 			DestroyCurrentObjects();
 		}
+//---------------------------------------------------------------------------------------
+		var audio = document.getElementById("audio");
+		var audioClick = 0;
+		audio.onclick = function()
+		{
+			if(audioClick % 2 == 0)// audio on
+			{
+				isSoundOn = false;
+				audio.innerHTML = "soundOff";
+			}
+			else // audio off
+			{
+				isSoundOn = true;
+				audio.innerHTML = "soundOn";
+			}
+			audioClick++;
+		}
+//---------------------------------------------------------------------------------------
 		setInterval(DrawGameObjects, 80);
 	}
 )(window);
