@@ -62,3 +62,24 @@ function DestroyCurrentObjects()
 		Shield.position.splice(0, 1);
 	}
 }
+
+function sound(src) 
+{
+    this.sound = document.createElement("audio");
+    this.sound.src = src;
+    this.play = function()
+    {
+    	if(isSoundOn == true)
+    	{
+        this.sound.play();
+    	}
+    }
+    this.stop = function()
+    {
+        this.sound.pause();
+    }
+}
+
+var shootSound = new sound("shoot.wav");
+var playerExplosionSound = new sound("explosion.wav");
+var alienExplosionSound = new sound("alienExplosion.wav");
