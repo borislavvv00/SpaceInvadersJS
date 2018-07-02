@@ -75,6 +75,7 @@ function GameElementGetHit()
 						GetPoints(Alien.position[j].kind);
 						Alien.position.splice(j, 1);
 						Bullet.position.splice(i, 1);
+						alienExplosionSound.play();
 					}
 				}
 //------------------------------------------------------------------alien's bullet hit shield's piece or player's ship------------------------------------------
@@ -92,12 +93,14 @@ function GameElementGetHit()
 							Shield.position[s].decay++;
 						}
 						Bullet.position.splice(i, 1);
+						playerExplosionSound.play();
 					}
 					if(Bullet.position[i].y >= PlayerShip.Y && Bullet.position[i].y <= PlayerShip.Y +  PlayerShip.size && Bullet.position[i].x >= PlayerShip.X && Bullet.position[i].x <= PlayerShip.X + PlayerShip.size)
 					{
 						DrawExplosion(PlayerShip.X, PlayerShip.Y, "player");
 						Bullet.position.splice(i, 1);
 						PlayerShip.lives--;
+						playerExplosionSound.play();
 						if(PlayerShip.lives == 0)
 						{	
 							isPlayerAlive = false;
@@ -114,6 +117,7 @@ function PlayerShoot()
 	if(isPlayerAlive == true)
 	{
 		Bullet.position.push({ x : PlayerShip.X + 20, y : PlayerShip.Y - 6, id : "player" });
+		shootSound.play();
 	}
 }
 
@@ -121,4 +125,5 @@ function AlienShoot()
 {
 	var alienShooted = Math.floor(Math.random() * Alien.position.length - 1);
 	Bullet.position.push({ x : Alien.position[alienShooted].x + Alien.size / 2, y : Alien.position[alienShooted].y + Alien.size, id : "alien" });
+	shootSound.play();
 }
