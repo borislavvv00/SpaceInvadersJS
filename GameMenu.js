@@ -148,9 +148,9 @@ function Rules()
 	context.drawImage(alien3, 650, 150, 40, 40);
 	context.drawImage(alien0, 630, 200, 80, 40);
 	
-	DrawText("30px Arial", "white", "=		20", 700, 80);
-	DrawText("30px Arial", "white", "=		30", 700, 130);
-	DrawText("30px Arial", "white", "=		40", 700, 180);
+	DrawText("30px Arial", "white", "=		10", 700, 80);
+	DrawText("30px Arial", "white", "=		20", 700, 130);
+	DrawText("30px Arial", "white", "=		30", 700, 180);
 	DrawText("30px Arial", "white", "=		??", 730, 230);
 //--------------------------------------------------------------------------------	
 	DrawMouseOverText(isMouseOnBackToMenu, "20px Arial", "Back to Menu", 300, 400);
