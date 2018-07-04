@@ -4,80 +4,55 @@
     <title> Space Invaders </title>
   </head>
   <body>
-    <div onmousemove = "MoveWithMouse(event)" onclick = "PlayerShoot()">
+    <div onmousemove = "MoveWithMouse(event)" onclick = "PlayerShoot(); MenuOptionsClick()" >
       <canvas id = "map" width = "1000" height = "600"></canvas>
     </div>
     <button id = "pause"> PauseOff </button>
     <button id = "restart"> restart </button>
     <button id = "audio"> soundOn </button>
     
-    <img id="playerShipExplosion" src="Images\PlayerShipExplosion.png" width="26" height="26">
-    <img id="playerShip" src="Image\PlayerShip.png" width="26" height="26">
-    <img id="explosion" src="Image\Explosion.png" width="26" height="26">
+    <img id="playerShipExplosion" src="Image\PlayerShipExplosion.png" width="0" height="0">
+    <img id="playerShip" src="Image\PlayerShip.png" width="0" height="0">
+    <img id="explosion" src="Image\Explosion.png" width="0" height="0">
     
-    <img id="alien10" src="Image\Alien10.png" width="26" height="26">
-    <img id="alien11" src="Image\Alien11.png" width="26" height="26">
-    <img id="alien20" src="Image\Alien20.png" width="26" height="26">
-    <img id="alien21" src="Image\Alien21.png" width="26" height="26">
-    <img id="alien30" src="Image\Alien30.png" width="26" height="26">
-    <img id="alien31" src="Image\Alien31.png" width="26" height="26">
-    <img id="alien0" src="Image\Alien00.png" width="40" height="26">
+    <img id="alien10" src="Image\Alien10.png" width="0" height="0">
+    <img id="alien11" src="Image\Alien11.png" width="0" height="0">
+    <img id="alien20" src="Image\Alien20.png" width="0" height="0">
+    <img id="alien21" src="Image\Alien21.png" width="0" height="0">
+    <img id="alien30" src="Image\Alien30.png" width="0" height="0">
+    <img id="alien31" src="Image\Alien31.png" width="0" height="0">
+    <img id="alien0" src="Image\Alien00.png" width="0" height="0">
     
-    <img id="shieldAngle1StateOfDecay0" src="Image\ShieldAngle1StateOfDecay0.png" width="26" height="26">
-    <img id="shieldAngle2StateOfDecay0" src="Image\ShieldAngle2StateOfDecay0.png" width="26" height="26">
-    <img id="shieldAngle3StateOfDecay0" src="Image\ShieldAngle3StateOfDecay0.png" width="26" height="26">
-    <img id="shieldAngle4StateOfDecay0" src="Image\ShieldAngle4StateOfDecay0.png" width="26" height="26">
-    <img id="shieldSquareStateOfDecay0" src="Image\ShieldSquareStateOfDecay0.png" width="26" height="26">
+    <img id="shieldAngle1StateOfDecay0" src="Image\ShieldAngle1StateOfDecay0.png" width="0" height="0">
+    <img id="shieldAngle2StateOfDecay0" src="Image\ShieldAngle2StateOfDecay0.png" width="0" height="0">
+    <img id="shieldAngle3StateOfDecay0" src="Image\ShieldAngle3StateOfDecay0.png" width="0" height="0">
+    <img id="shieldAngle4StateOfDecay0" src="Image\ShieldAngle4StateOfDecay0.png" width="0" height="0">
+    <img id="shieldSquareStateOfDecay0" src="Image\ShieldSquareStateOfDecay0.png" width="0" height="0">
     
-    <img id="shieldAngle1StateOfDecay1" src="Image\ShieldAngle1StateOfDecay1.png" width="26" height="26">
-    <img id="shieldAngle2StateOfDecay1" src="Image\ShieldAngle2StateOfDecay1.png" width="26" height="26">
-    <img id="shieldAngle3StateOfDecay1" src="Image\ShieldAngle3StateOfDecay1.png" width="26" height="26">
-    <img id="shieldAngle4StateOfDecay1" src="Image\ShieldAngle4StateOfDecay1.png" width="26" height="26">
-    <img id="shieldSquareStateOfDecay1" src="Image\ShieldSquareStateOfDecay1.png" width="26" height="26">
+    <img id="shieldAngle1StateOfDecay1" src="Image\ShieldAngle1StateOfDecay1.png" width="0" height="0">
+    <img id="shieldAngle2StateOfDecay1" src="Image\ShieldAngle2StateOfDecay1.png" width="0" height="0">
+    <img id="shieldAngle3StateOfDecay1" src="Image\ShieldAngle3StateOfDecay1.png" width="0" height="0">
+    <img id="shieldAngle4StateOfDecay1" src="Image\ShieldAngle4StateOfDecay1.png" width="0" height="0">
+    <img id="shieldSquareStateOfDecay1" src="Image\ShieldSquareStateOfDecay1.png" width="0" height="0">
     
-    <img id="shieldAngle1StateOfDecay2" src="Image\ShieldAngle1StateOfDecay2.png" width="26" height="26">
-    <img id="shieldAngle2StateOfDecay2" src="Image\ShieldAngle2StateOfDecay2.png" width="26" height="26">
-    <img id="shieldAngle3StateOfDecay2" src="Image\ShieldAngle3StateOfDecay2.png" width="26" height="26">
-    <img id="shieldAngle4StateOfDecay2" src="Image\ShieldAngle4StateOfDecay2.png" width="26" height="26">
-    <img id="shieldSquareStateOfDecay2" src="Image\ShieldSquareStateOfDecay2.png" width="26" height="26">
+    <img id="shieldAngle1StateOfDecay2" src="Image\ShieldAngle1StateOfDecay2.png" width="0" height="0">
+    <img id="shieldAngle2StateOfDecay2" src="Image\ShieldAngle2StateOfDecay2.png" width="0" height="0">
+    <img id="shieldAngle3StateOfDecay2" src="Image\ShieldAngle3StateOfDecay2.png" width="0" height="0">
+    <img id="shieldAngle4StateOfDecay2" src="Image\ShieldAngle4StateOfDecay2.png" width="0" height="0">
+    <img id="shieldSquareStateOfDecay2" src="Image\ShieldSquareStateOfDecay2.png" width="0" height="0">
     
-    <script>
-    document.getElementById("shieldSquareStateOfDecay2").style.visibility = "hidden";
-    document.getElementById("shieldAngle4StateOfDecay2").style.visibility = "hidden";
-    document.getElementById("shieldAngle3StateOfDecay2").style.visibility = "hidden";
-    document.getElementById("shieldAngle2StateOfDecay2").style.visibility = "hidden";
-    document.getElementById("shieldAngle1StateOfDecay2").style.visibility = "hidden";
+    <img id="ad" src="Image\ad.jpg" width="0" height="0">
+    <img id="space" src="Image\Space.jpg" width="0" height="0">
+    <img id="mouse" src="Image\Mouse.jpg" width="0" height="0">
+    <img id="mouseMove" src="Image\MouseMove.png" width="0" height="0">
     
-    document.getElementById("shieldSquareStateOfDecay1").style.visibility = "hidden";
-    document.getElementById("shieldAngle4StateOfDecay1").style.visibility = "hidden";
-    document.getElementById("shieldAngle3StateOfDecay1").style.visibility = "hidden";
-    document.getElementById("shieldAngle2StateOfDecay1").style.visibility = "hidden";
-    document.getElementById("shieldAngle1StateOfDecay1").style.visibility = "hidden";
-    
-    document.getElementById("shieldSquareStateOfDecay0").style.visibility = "hidden";
-    document.getElementById("shieldAngle4StateOfDecay0").style.visibility = "hidden";
-    document.getElementById("shieldAngle3StateOfDecay0").style.visibility = "hidden";
-    document.getElementById("shieldAngle2StateOfDecay0").style.visibility = "hidden";
-    document.getElementById("shieldAngle1StateOfDecay0").style.visibility = "hidden";
-    
-    document.getElementById("explosion").style.visibility = "hidden";
-    document.getElementById("playerShip").style.visibility = "hidden";
-    document.getElementById("playerShipExplosion").style.visibility = "hidden";
-    
-    document.getElementById("alien0").style.visibility = "hidden";
-    document.getElementById("alien10").style.visibility = "hidden";
-    document.getElementById("alien11").style.visibility = "hidden";
-    document.getElementById("alien20").style.visibility = "hidden";
-    document.getElementById("alien21").style.visibility = "hidden";
-    document.getElementById("alien30").style.visibility = "hidden";
-    document.getElementById("alien31").style.visibility = "hidden";
-    </script>
     <script src = "GameOutput.js"></script>
     <script src = "DrawAliensAndShields.js"></script>
     <script src = "GameElementsGetCoordinates.js"></script>
     <script src = "GameMovement.js"></script>
     <script src = "GameObjectsLogic.js"></script>
     <script src = "GameStatsLogic.js"></script>
+    <script src = "GameMenu.js"></script>
     <script src = "GameObjects.js"></script>
     <script src = "Source.js"></script>
   </body>
