@@ -34,17 +34,13 @@ function LevelGeneration()
 
 function GameOver()
 {
-	context.font = "100px Arial";
-	context.fillStyle = "red";
-	context.fillText("GAME OVER ",map.height / 2 - 100, map.width / 2 - 100);
+	DrawText("100px Arial", "red", "GAME OVER ", map.height / 2 - 100, map.width / 2 - 100);
 	isGamePause = false;
 }
 
 function Pause()
 {
-	context.font = "100px Arial";
-	context.fillStyle = "blue";
-	context.fillText("PAUSE ",map.height / 2 , map.width / 2 - 100);
+	DrawText("100px Arial", "blue", "PAUSE ", map.height / 2, map.width / 2 - 100);
 }
 
 function DestroyCurrentObjects()
@@ -63,23 +59,23 @@ function DestroyCurrentObjects()
 	}
 }
 
-function sound(src) 
+function Sound(src) 
 {
-    this.sound = document.createElement("audio");
-    this.sound.src = src;
+    this.Sound = document.createElement("audio");
+    this.Sound.src = src;
     this.play = function()
     {
     	if(isSoundOn == true)
     	{
-        this.sound.play();
+        this.Sound.play();
     	}
     }
     this.stop = function()
     {
-        this.sound.pause();
+        this.Sound.pause();
     }
 }
 
-var shootSound = new sound("shoot.wav");
-var playerExplosionSound = new sound("explosion.wav");
-var alienExplosionSound = new sound("alienExplosion.wav");
+var shootSound = new Sound("shoot.wav");
+var playerExplosionSound = new Sound("explosion.wav");
+var alienExplosionSound = new Sound("alienExplosion.wav");
