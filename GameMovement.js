@@ -1,10 +1,12 @@
 function MoveWithMouse(event)
 {
 	var cursorX = event.clientX;
+	var cursorY = event.clientY;
 	if(cursorX >= 0 && cursorX <= map.width && isPlayerAlive == true && isGamePause == false)
 	{
 		PlayerShip.X = cursorX - 27;	
 	}
+	MouseOver(cursorX, cursorY);
 }
 
 function GetKeyboardCommands()
@@ -30,7 +32,7 @@ function AlienMovement()
 {
 	for(var i = 0; i < Alien.position.length; i++)
 	{
-		if(Alien.position[i].kind == 0)//spacial alien
+		if(Alien.position[i].kind == 0)//spacel alien
 		{
 			if(Alien.position.length != 0 && Alien.position[i].direction == "rigth")
 			{
