@@ -49,10 +49,9 @@ function DrawExplosion(x, y, object)
 
 function DrawGameStats()
 {
-	context.font = "30px Arial";
-	context.fillStyle = "white";
-	context.fillText("score = " + score + "		level = " + level, 5, 30);
-	context.fillText("lives = ", 600, 30);
+	DrawText("30px Arial", "white", "score = " + score, 5, 30);
+	DrawText("30px Arial", "white", "level = " + level, 200, 30);
+	DrawText("30px Arial", "white", "lives = ", 600, 30);
 	var distanceBetweenShips = 20;
 	for(var i = 0; i < PlayerShip.lives; i++)
 	{
