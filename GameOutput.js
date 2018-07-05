@@ -50,7 +50,7 @@ function DrawExplosion(x, y, object)
 function DrawGameStats()
 {
 	DrawText("30px Arial", "white", "score = " + score, 5, 30);
-	DrawText("30px Arial", "white", "level = " + level, 200, 30);
+	DrawText("30px Arial", "white", "level = " + level, 300, 30);
 	DrawText("30px Arial", "white", "lives = ", 600, 30);
 	var distanceBetweenShips = 20;
 	for(var i = 0; i < PlayerShip.lives; i++)
