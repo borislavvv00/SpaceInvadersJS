@@ -76,6 +76,6 @@ function Sound(src)
     }
 }
 
-var shootSound = new Sound("shoot.wav");
-var playerExplosionSound = new Sound("explosion.wav");
-var alienExplosionSound = new Sound("alienExplosion.wav");
+var shootSound = new Sound("Sounds/shoot.wav");
+var playerExplosionSound = new Sound("Sounds/explosion.wav");
+var alienExplosionSound = new Sound("Sounds/alienExplosion.wav");
