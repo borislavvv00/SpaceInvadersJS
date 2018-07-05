@@ -43,7 +43,7 @@ function MouseOver(cursorX, cursorY)
 		}
 	}
 //------------------------------------------------------------------------------------
-	if(cursorX >= 310 && cursorX <= 429 && cursorY >= 390 && cursorY <= 410)
+	if(cursorX >= 310 && cursorX <= 429 && cursorY >= 411 && cursorY <= 430)
 	{
 		isMouseOnBackToMenu = true;
 	}
@@ -76,22 +76,25 @@ function MenuOptionsClick()
 			intervalGame = setInterval(DrawGameObjects, 80);
 			isGameStart = true;
 		}
-		else if(isMouseOnCredits == true)
+		else if(isMouseOnCredits == true && isCreditsClicked == false && isRulesClicked == false)
 		{
+			DestroyCurrentObjects();
 			clearInterval(intervalMenu);
 			intervalCredits = setInterval(Credits, 80);
 			isCreditsClicked = true;
 		}
 		else if(isMouseOnBackToMenu == true)
 		{
+			DestroyCurrentObjects();
 			clearInterval(intervalCredits);
 			clearInterval(intervalRules);
 			intervalMenu = setInterval(DrawGameMenu, 80);
 			isCreditsClicked = false;
 			isRulesClicked = false;
 		}
-		else if(isMouseOnRules)
+		else if(isMouseOnRules == true && isCreditsClicked == false && isRulesClicked == false)
 		{
+			DestroyCurrentObjects();
 			clearInterval(intervalMenu);
 			intervalRules = setInterval(Rules, 80);
 			isRulesClicked = true;
@@ -153,7 +156,7 @@ function Rules()
 	DrawText("30px Arial", "white", "=		30", 700, 180);
 	DrawText("30px Arial", "white", "=		??", 730, 230);
 //--------------------------------------------------------------------------------	
-	DrawMouseOverText(isMouseOnBackToMenu, "20px Arial", "Back to Menu", 300, 400);
+	DrawMouseOverText(isMouseOnBackToMenu, "20px Arial", "Back to Menu", 300, 420);
 }
 
 function Credits()
@@ -168,7 +171,7 @@ function Credits()
 	BulletMovement();
 //---------------------------------------------------------------------------		
 	DrawText("50px Arial", "white", "Created by: Borislavvv", 300, 300);
-	DrawMouseOverText(isMouseOnBackToMenu, "20px Arial", "Back to Menu", 300, 400);
+	DrawMouseOverText(isMouseOnBackToMenu, "20px Arial", "Back to Menu", 300, 420);
 }
 
 function DrawGameMenu()
